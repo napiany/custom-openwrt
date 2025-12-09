@@ -1,7 +1,20 @@
 # custom-openwrt
 
 > [!CAUTION]
-> The builds are currently untested!
+> The builds and configurations are currently untested!
+
+### Fritz!Box 7530
+- DSL Modem
+- IPv6 RA
+- DNS64
+- Tayga for IPv4 compat
+
+# Credits
+- Tavi for providing Divested-WRT and it's patches which this project is heavily based on
+- Rui Salvaterra for the frequent kernel bumps+testing and the Thumb-2 patch
+- Daniel Engberg for the -O2 patch
+- OpenWrt, its amazing contributors, and its friendly community for all that it is
+- Alexander Popov, for maintaining a detailed list of kernel config hardening options at https://github.com/a13xp0p0v/kconfig-hardened-check
 
 ## How to build
 Install all the necessary dependencies listed here: https://openwrt.org/docs/guide-developer/build-system/install-buildsystem#linux_distributions
@@ -11,7 +24,7 @@ Install all the necessary dependencies listed here: https://openwrt.org/docs/gui
 - `git config pull.rebase true`
 - `./scripts/feeds update -a -f`
 - `./scripts/feeds install -a -f`
-- copy in the config from the latest build here, name it .config
+- Copy in the config for the device as .config
 - `git apply patches/*.patch`
 - `make menuconfig` Make changes, save and exit
 - `make download -j4`
